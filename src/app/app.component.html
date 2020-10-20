@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>
@@ -23,5 +23,37 @@
     </ul>
   </div>
 </nav>
-
+<div class="container">
+<div class="col-md-3">
+</div>
+<div class="col-md-9">
+  <table class="table table-hover" *ngIf="visiteurs">
+    <thead>
+      <tr>
+        <th>NOM</th>
+        <th>PRENOM</th>
+        <th>CNIB</th>
+        <th>DATE D'EXPIRATION</th>
+        <th>DATE & HEURE D'ENTREE</th>
+        <th>DATE & HEURE DE SORTIE</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of visiteurs._embedded.visiteurs">
+        <td>{{v.nom_visiteur}}</td>
+        <td>{{v.prenom_visiteur}}</td>
+        <td>{{v.cnib}}</td>
+        <td>{{v.date_exp_cnib}}</td>
+        <td>{{v.visite[0].date_in}}</td>
+        <td>{{v.visite[0].date_out}}</td>
+        <td><button *ngIf="v.visite[0].date_out==NULL" type="button" class="btn btn-primary">
+          SORTIE</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 <router-outlet></router-outlet>
+
+</div>
+</div>
