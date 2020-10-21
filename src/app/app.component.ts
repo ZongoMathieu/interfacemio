@@ -10,17 +10,10 @@ export class AppComponent implements OnInit {
   title = 'interfacemio';
   public visiteurs;
 
-  constructor(private appSer: AppService){}
+  constructor(){}
   ngOnInit(): void{
-    this.getVisiteurs();
+    
   }
 
-  private getVisiteurs(){
-    this.appSer.getResource("/visiteurs").subscribe(data=>{
-      this.visiteurs=data;
-      console.log(data);
-    }, err=>{
-      console.log(err);
-    })
-  }
+  
 }

@@ -4,7 +4,11 @@
       <a class="navbar-brand" href="#">CORIS HOLDING</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">ACCUEIL</a></li>
+      <li class="active"><a routerLink="">ACCUEIL</a></li>
+      <li><a routerLink="visiteurs">VISITEURS</a></li>
+      <li><a routerLink="services">SERVICES</a></li>
+      <li><a routerLink="visitees">EMPLOYES</a></li>
+      <li><a routerLink="vigiles">VIGILES</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">STATISTIQUE
         <span class="caret"></span></a>
@@ -29,67 +33,5 @@
     </ul>
   </div>
 </nav>
-<div class="container">
-  <div class="col-md-3" style="padding-bottom: 10px;">
-    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Nouvelle Entrée</button>
-  
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-  
-    </div>
-  </div>
-  </div>
-
-<div class="col-md-12">
-  <div class="panel panel-info" *ngIf="visiteurs">
-    <!-- Default panel contents -->
-    <div class="panel-heading">LISTE DES ENTREES - SORTIES</div>
-    <div class="panel-body">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>NOM</th>
-        <th>PRENOM</th>
-        <th>CNIB</th>
-        <th>DATE D'EXPIRATION</th>
-        <th>DATE & HEURE D'ENTREE</th>
-        <th>DATE & HEURE DE SORTIE</th>
-        <th>ACTION</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let v of visiteurs._embedded.visiteurs">
-        <td>{{v.nom_visiteur}}</td>
-        <td>{{v.prenom_visiteur}}</td>
-        <td>{{v.cnib}}</td>
-        <td>{{v.date_exp_cnib}}</td>
-        <td>{{v.visite[0].date_in}}</td>
-        <td>{{v.visite[0].date_out}}</td>
-        <td><button *ngIf="v.visite[0].date_out==NULL" type="button" class="btn btn-primary">
-          SORTIE</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
 
 <router-outlet></router-outlet>
-
-</div>
-</div>
