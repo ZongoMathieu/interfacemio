@@ -9,6 +9,7 @@ import { ServicesComponent } from './services/services.component';
 import { VisiteursComponent } from './visiteurs/visiteurs.component';
 import { VigilesComponent } from './vigiles/vigiles.component';
 import { VisiteesComponent } from './visitees/visitees.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VisiteesComponent } from './visitees/visitees.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
