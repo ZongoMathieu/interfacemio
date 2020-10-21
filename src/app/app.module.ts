@@ -10,6 +10,7 @@ import { VisiteursComponent } from './visiteurs/visiteurs.component';
 import { VigilesComponent } from './vigiles/vigiles.component';
 import { VisiteesComponent } from './visitees/visitees.component';
 import { FormsModule } from '@angular/forms';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ServicesComponent,
     VisiteursComponent,
     VigilesComponent,
-    VisiteesComponent
+    VisiteesComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
