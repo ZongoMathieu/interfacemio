@@ -9,7 +9,8 @@ const routes: Routes = [
   {path:'services', component:ServicesComponent},
   {path:'visiteurs', component:VisiteursComponent},
   {path:'visitees', component:VisiteesComponent},
-  {path:'vigiles', component:VigilesComponent}
+  {path:'vigiles', component:VigilesComponent},
+  {path:'', redirectTo:'/visiteurs', pathMatch:'full'}
 
 ];
 

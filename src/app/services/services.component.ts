@@ -19,7 +19,7 @@ export class ServicesComponent implements OnInit {
     this.appServ.getResource("/services")
     .subscribe(data=>{
       this.services=data;
-      console.log(data);
+      //console.log(data);
 
     },err=>{
       console.log(err);
