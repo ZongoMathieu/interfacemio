@@ -16,10 +16,10 @@ export class ServicesComponent implements OnInit {
   }
 
   getServices(){
-    this.appServ.getResource("/services")
+    this.appServ.getResource("/allservices")
     .subscribe(data=>{
       this.services=data;
-      //console.log(data);
+      console.log(data);
 
     },err=>{
       console.log(err);

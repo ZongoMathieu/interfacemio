@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 .footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
-    width: 100%;
+    width: 0;
     height: 70px;
     text-align: center; 
 }
