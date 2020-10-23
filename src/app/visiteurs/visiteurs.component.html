@@ -32,6 +32,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>No</th>
           <th>NOM</th>
           <th>PRENOM</th>
           <th>CNIB</th>
@@ -43,6 +44,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let v of visiteurs._embedded.visiteurs">
+          <td>{{v.id}}</td>
           <td>{{v.nom_visiteur}}</td>
           <td>{{v.prenom_visiteur}}</td>
           <td>{{v.cnib}}</td>

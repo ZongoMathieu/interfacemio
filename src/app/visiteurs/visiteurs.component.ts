@@ -12,7 +12,7 @@ export class VisiteursComponent implements OnInit {
   constructor(private appSer: AppService) { }
 
   ngOnInit(): void {
-    //setInterval(()=>{this.getVisiteurs();},6000)
+   // setInterval(()=>{this.getVisiteurs();},10000)
     this.getVisiteurs()
     
   }

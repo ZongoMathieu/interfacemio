@@ -9,6 +9,8 @@ import { AppService } from '../appservice.service';
 export class ServicesComponent implements OnInit {
 
   public services;
+  public visitees;
+  public serviceSelectionned;
   constructor(private appServ:AppService) { }
 
   ngOnInit(): void {
@@ -16,9 +18,22 @@ export class ServicesComponent implements OnInit {
   }
 
   getServices(){
-    this.appServ.getResource("/allservices")
+    this.appServ.getResource("/services")
     .subscribe(data=>{
       this.services=data;
+      console.log(data);
+
+    },err=>{
+      console.log(err);
+    })
+  }
+
+  onGetEmployes(s){
+    this.serviceSelectionned=s;
+    console.log(this.serviceSelectionned);
+    this.appServ.getResource("/services/"+s.id+"/visitees")
+    .subscribe(data=>{
+      this.visitees=data;
       console.log(data);
 
     },err=>{
