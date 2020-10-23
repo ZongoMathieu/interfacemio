@@ -8,13 +8,14 @@
     
         <!-- Modal content-->
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header panel-primary">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="panel-heading">ENREGISTRER UN NOUVEAU SERVICE</div>
           </div>
           <div class="modal-body">
               <div class="panel panel-primary" *ngIf="services">
                   <!-- Default panel contents -->
-                  <div class="panel-heading">ENREGISTRER UN NOUVEAU SERVICE</div>
+                  
                   <div class="panel-body">
                   <div class="form-row">
                     <div class="form-group">
@@ -41,6 +42,7 @@
     
       </div>
     </div>
+    
 <div style="padding-top: 10px;">
     <div class="panel panel-info" *ngIf="services">
       <!-- Default panel contents -->
@@ -75,7 +77,9 @@
     
   
   <div class="col-md-6">
-
+    <div class="alert alert-success" *ngIf="message==1">
+      <strong>Success!</strong> Indicates a successful or positive action.
+    </div>
     <div class="panel panel-primary" *ngIf="visitees">
       <!-- Default panel contents -->
       <div class="panel-heading">LISTE DES EMPLOYES ({{serviceSelectionned.libelle}}) </div>

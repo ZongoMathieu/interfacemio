@@ -7,3 +7,8 @@
     height: 70px;
     text-align: center; 
 }
+.navbar-default {
+    background-color: blue;
+    background-image: none;
+    background-repeat: no-repeat;
+  }

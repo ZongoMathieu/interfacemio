@@ -11,6 +11,7 @@ export class ServicesComponent implements OnInit {
   public services;
   public visitees;
   public serviceSelectionned={id:-1};
+  public message;
   constructor(private appServ:AppService) { }
 
   ngOnInit(): void {
@@ -29,6 +30,8 @@ export class ServicesComponent implements OnInit {
   }
 
   onGetEmployes(s){
+    this.message=1;
+    console.log(this.message)
     this.serviceSelectionned=s;
     console.log(this.serviceSelectionned);
     this.appServ.getResource("/services/"+s.id+"/visitees")
