@@ -59,7 +59,7 @@
         <tr *ngFor="let s of services._embedded.services">
           <td>{{s.id}}</td>
           <td>{{s.libelle}}</td>
-          <td><button (click)="onGetEmployes(s)" type="button" class="btn btn-default">
+          <td><button (click)="onGetEmployes(s)" type="button" [ngClass]="s.id==serviceSelectionned.id?'btn btn-warning':'btn btn-default'">
             EMPLOYES</button>&nbsp;
             <button type="button" class="btn btn-primary">
               MODIFIER</button>&nbsp;

@@ -10,7 +10,7 @@ export class ServicesComponent implements OnInit {
 
   public services;
   public visitees;
-  public serviceSelectionned;
+  public serviceSelectionned={id:-1};
   constructor(private appServ:AppService) { }
 
   ngOnInit(): void {
