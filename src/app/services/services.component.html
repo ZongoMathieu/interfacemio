@@ -1,6 +1,7 @@
   <div class="container-fluid">
     <div class="col-md-6" style="padding-bottom: 10px;">
       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">ENREGISTRER SERVICE</button>
+      <button type="button" class="btn btn-success" (click)="exportAsXLSX()">EXPORT DONNEES</button>
     
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
@@ -18,22 +19,24 @@
                   
                   <div class="panel-body">
                   <div class="form-row">
+                    <form #f="ngForm" (ngSubmit)="onSave(f.value)">
                     <div class="form-group">
                       <label for="inputEmail4">LIBELLE DU SERVICE</label>
-                      <input type="text" class="form-control" id="inputEmail4" placeholder="Libellé du Service">
+                      <input type="text" name="libelle" ngModel class="form-control" id="inputEmail4" placeholder="Libellé du Service">
                       <div class="form-group">
                           <label for="inputState">ETAT</label>
-                          <select id="inputState" class="form-control">
-                            <option selected>ACTIF</option>
-                            <option>INACTIF</option>
+                          <select id="inputState" class="form-control" ngModel name="etat">
+                            <option selected value="1">ACTIF</option>
+                            <option value="2">INACTIF</option>
                           </select>
                     </div>
                   </div>
+               
                   <div class="form-row pull-right ">
                       <button type="reset" class="btn btn-default " data-dismiss="modal">ANNULER</button>&nbsp;
                       <button type="submit" class="btn btn-success ">VALIDER</button>
                   </div>
-                  
+                </form>
           </div>
       </div>
       </div>
